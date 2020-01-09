@@ -11,8 +11,8 @@ spring:
    application:
     name: microservicecloud-dept # 应用名称
    datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    type: org.apache.commons.dbcp.BasicDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver           # mysql驱动包
     url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
     username: root
     password: 123456
@@ -21,7 +21,8 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-      
+
+
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -37,4 +38,3 @@ info: # 在eureka中可以点击info链接，显示有值。链接后的内容�
   company.name: www.java3y.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-
